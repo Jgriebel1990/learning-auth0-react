@@ -12,9 +12,7 @@ class App extends Component {
     super();
     this.auth = new Auth();
   }
-  componentDidMount() {
-    this.auth.login();
-  }
+  
   render() {
     return (
       <div>
@@ -25,9 +23,12 @@ class App extends Component {
           <li>
             <Link to="profile">Profile</Link>
           </li>
+          <li>
+            <button onClick={() => this.auth.login()}>login</button>
+          </li>
         </ul>
         <Route path="/" exact component={Home} />
-        <Route path path="/profile" exact component={Profile} />
+        <Route path="/profile" exact component={Profile} />
       </div>
     );
   }
